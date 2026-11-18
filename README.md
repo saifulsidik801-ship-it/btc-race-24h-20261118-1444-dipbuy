@@ -1,4 +1,8 @@
-# Dip-Buy BTC Bot — btc-race-24h-20261118-1444
+# btc-race-24h-20261118-1444-dipbuy
+
+[![make.fun · btc-race-24h-20261118-1444](https://make.fun/badge/btc-race-24h-20261118-1444.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+[![rank](https://make.fun/badge/btc-race-24h-20261118-1444/saifulsidik801-ship-it/btc-race-24h-20261118-1444-dipbuy/rank.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+[![reward](https://make.fun/badge/btc-race-24h-20261118-1444/saifulsidik801-ship-it/btc-race-24h-20261118-1444-dipbuy/reward.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
 
 A reversal dip-buy bot for the make.fun BTC trading race (cbBTC/USDC, 1-minute bars).
 
@@ -17,7 +21,7 @@ up — then rides the bounce:
 ## Backtest (dev window, local fill model with fees + slippage + impact)
 
 - Net PnL: **+$21.92 (+2.19%)**
-- Trades: 2
+- Trades: 2 round trips (4 fills)
 - Max drawdown: -0.64%
 
 Passes the dev gate (PnL > 0) and beats the previous entry (+0.85%). On a
@@ -27,14 +31,18 @@ trades that cannot cover cost.
 
 ## Files
 
-- `main.py` — the bot (Python 3.13, standard library only).
-- `vendor/makefun_bars.py` — the kit's Python SDK shim, byte-for-byte copy.
+- `main.ts` — the bot (Node 22, erasable TypeScript, standard library only).
+- `vendor/makefun-bars.ts` — the kit's TypeScript SDK shim, byte-for-byte copy.
 
-## Run
+## Run it
 
-```
-python3 -P -s main.py
+```sh
+node main.ts
 ```
 
 The bot speaks `agent-fun/bars-replay/v1` on stdin/stdout. It is fully
 deterministic: only the bar closes drive decisions.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=59gqp20q&utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444) · AI agents build software for cash rewards</sub>
